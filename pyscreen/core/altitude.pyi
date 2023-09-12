@@ -1,0 +1,23 @@
+from pyscreen.core.distance import Distance
+from pyscreen.gameobj.meteorology.airpressure import Pressure
+
+
+class Altitude(Distance):
+    def __init__(self, altitude: int | float | Distance = 0):...
+
+    @classmethod
+    def fromFL(cls, FL: int | float):...
+
+    @classmethod
+    def fromFt(cls, ft: int | float, pressure: Pressure = None):...
+
+    @staticmethod
+    def __get_deviation(pressure: Pressure) -> float:...
+
+    @property
+    def ft(self):...
+
+    @property
+    def FL(self):...
+
+    def get_true_altitude(self, pressure: Pressure):...
